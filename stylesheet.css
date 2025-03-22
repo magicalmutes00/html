@@ -1,0 +1,36 @@
+#traffic{
+    width: 400px;
+    height: 700px;
+    background-color: black;
+    border-radius: 50px;
+    margin-left: 500px;
+}
+#a{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+    border-radius: 100%;
+}
+#b{
+    background-color:yellow;
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+    margin-top: 20px;
+    border-radius: 100%;
+}
+#c{
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+    margin-top: 20px;
+    border-radius: 100%;
+}
+#d{
+    background-color: black;
+    width: 50px;
+    height: 200px;
+    margin-left: 170px;
+}
