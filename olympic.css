@@ -1,0 +1,45 @@
+#a{
+    border: 10px solid #0096c7;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+#b{
+    border: 10px solid black;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: relative;
+    left: 250px;
+    bottom: 220px;
+}
+#c{
+    border: 10px solid red;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: relative;
+    bottom: 440px;
+    left: 500px;
+}
+#d{
+    border: 10px solid yellow;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: relative;
+    bottom: 550px;
+    left: 120px ;
+}
+#e{
+    border: 10px solid #38b000;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: relative;
+    bottom: 770px;
+    left: 380px;
+}
+#main{
+    margin-left: 400px;
+}
