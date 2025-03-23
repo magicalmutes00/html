@@ -34,3 +34,22 @@
     height: 200px;
     margin-left: 170px;
 }
+div{
+    width: 700px;
+    height: 600px;
+    background-color: beige;
+    margin-left: 400px;
+}
+
+h1{
+    text-align: center;
+}
+img{
+    margin-left: 220px;
+}
+p{
+    padding: 50px;
+}
+a{
+    margin-left: 300px;
+}
