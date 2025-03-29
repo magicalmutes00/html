@@ -1,0 +1,96 @@
+#clock{
+    width: 500px;
+    height: 500px;
+    border: 5px solid black;
+    border-radius: 100%;
+    position: relative;
+    left: 450px;
+}
+.text{
+    font-size: 50px;
+}
+#c12{
+    position: relative;
+    left: 230px;
+    bottom: 40px;
+    color: red;
+
+}
+#c1{
+    position: relative;
+    left: 350px;
+    bottom: 110px;
+
+}
+#c2{
+    position: relative;
+    left: 420px;
+    bottom: 150px;
+
+}
+#c3{
+    position: relative;
+    left: 450px;
+    bottom: 150px;
+    color: red;
+
+}
+#c4{
+    position: relative;
+    left: 420px;
+    bottom: 160px;
+
+}
+#c5{
+    position: relative;
+    left: 350px;
+    bottom: 180px;
+
+}
+#c6{
+    position: relative;
+    left: 240px;
+    bottom: 250px;
+    color: red;
+
+}
+#c7{
+    position: relative;
+    left: 140px;
+    bottom: 390px;
+
+}
+#c8{
+    position: relative;
+    left: 50px;
+    bottom: 590px;
+
+}
+#c9{
+    position: relative;
+    left: 20px;
+    bottom: 790px;
+    color: red;
+
+}
+#c10{
+    position: relative;
+    left: 20px;
+    bottom: 990px;
+
+}
+#c11{
+    position: relative;
+    left: 100px;
+    bottom: 1190px;
+
+}
+/* #line{
+    width: 200px;
+    border: solid black;
+    height: 2px;
+    background-color: black;
+    position: relative;
+    bottom: 1090px;
+    left: 250px;
+} */
