@@ -5,13 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="traffic.js"></script>
 </head>
 <body>
     <div id="traffic"><br>
-        <div id="a"></div>
-        <div id="b"></div>
-        <div id="c"></div>
+        <div id="red"></div>
+        <div id="yellow"></div>
+        <div id="green"></div>
         <div id="d"></div>
     </div>
+    <script>
+        
+let clr=prompt("enter the color red,yellow or green");
+
+if(clr=="red"){
+    // document.getElementById("red").style.backgroundColor="red"
+    document.getElementById("red").style.backgroundColor="#e63946";
+}
+else if(clr=="yellow"){
+    document.getElementById("yellow").style.backgroundColor="#ffbe0b";
+}
+else if(clr=="green"){
+    document.getElementById("green").style.backgroundColor="#52b788";
+}
+else{
+    alert("enter the valid color");
+}
+
+    </script>
 </body>
 </html>

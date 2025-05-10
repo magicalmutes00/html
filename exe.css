@@ -1,0 +1,28 @@
+.main{
+    width: 500px;
+    height: 500px;
+    margin: 200px;
+    background-color: #e63946;
+}
+img{
+    width: 500px;
+    height: 500px;
+    clip-path: circle(50% at 50% 50%);
+    animation: circle 3s ease-in-out infinite;
+}
+/* img:hover{
+
+} */
+@keyframes circle{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* @-webkit-keyframes{
+    100%{
+        transform: rotate(360deg);
+    }
+} */

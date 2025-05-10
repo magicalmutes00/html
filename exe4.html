@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login.Instagram</title>
+    <title>Document</title>
     <link rel="stylesheet" href="insta.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #use,#pass{
+            position: relative;
+            top: 150px;
+            left: 650px;
+        }
+    </style>
 </head>
 <body>
-    <span id="fill"></span>
     <div id="log">
         <img src="src/img/images (1).png" alt="">
-        <form action="insta_home.html" name="insta_login" onsubmit=" return insta()">
+        <form  name="insta_login" onsubmit="return  insta()">
             <input type="text" name="user" placeholder="usename or email" required="">
             <i class="fa-solid fa-user"></i>
             <br><br>
@@ -32,29 +38,19 @@
         <p id="up">Don't have an account?</p>
         <a id="up1" href="https://www.facebook.com/login">Sign up</a>
     </div>
+    <h1 id="use"></h1>
+    <h1 id="pass"></h1>
+
 </body>
 <script>
     function insta(){
         var a=document.insta_login.user.value;
         var b=document.insta_login.pass.value;
-        var message ="";
-        if (a===""||b===""){
-            message="Please enter all field"
-        }
-        else if(b.length <8||
-        !b.match(/[A-Z]/)||
-        !b.match(/[a-z]/)||
-        !b.match(/[0-9!@#$%^&*]/)){
-            message="Passwod must contains min 8 character,contain upper&lower case and a number or special character"
-            alert("Passwod must contains min 8 character,contain upper&lower case and a number or special character")
-        }
-        if (message){
-            document.getElementById('fill').innerHTML=message;
+       
+            document.getElementById("use").innerHTML="username:"+a;
+            document.getElementById('pass').innerHTML="Password"+b;
             return false;
-        }else{
-            alert("inputs are valid")
-            return true;
-        }
-    }
+
+}
 </script>
 </html>

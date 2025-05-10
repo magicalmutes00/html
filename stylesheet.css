@@ -5,28 +5,31 @@
     border-radius: 50px;
     margin-left: 500px;
 }
-#a{
-    background-color: red;
+#red{
+    background-color:white;
     width: 200px;
     height: 200px;
     margin-left: 100px;
     border-radius: 100%;
+    transition: 0.5s;
 }
-#b{
-    background-color:yellow;
+#yellow{
+    background-color: white;
     width: 200px;
     height: 200px;
     margin-left: 100px;
     margin-top: 20px;
     border-radius: 100%;
+    transition: 0.5s;
 }
-#c{
-    background-color: green;
+#green{
+    background-color: white;
     width: 200px;
     height: 200px;
     margin-left: 100px;
     margin-top: 20px;
     border-radius: 100%;
+    transition: 0.5s;
 }
 #d{
     background-color: black;

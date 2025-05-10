@@ -33,15 +33,15 @@
     </header>
     <div class="SignUp">
     <div>
-   <form>
+   <form name="myform" onsubmit="">
     <label>FirstName</label>
-    <input type="text" placeholder="FirstName" required=""><br><br>
+    <input type="text" name="fname" placeholder="FirstName" required=""><br><br>
     <label>LastName</label>
-    <input type="text" placeholder="LastName" required=""><br><br>
+    <input type="text" name="lname"  placeholder="LastName" required=""><br><br>
     <i class="fa-solid fa-envelope"></i> <label>MailID</label>
-    <input type="email" placeholder="Mail Id" required=""><br><br>
+    <input type="email" name="mail" placeholder="Mail Id" required=""><br><br>
     <i class="fa-duotone fa-solid fa-user"></i> <label>Phoneno</label>
-    <input type="number" placeholder="+91" required=""><br><br>
+    <input type="number" name="num" placeholder="+91" required=""><br><br>
     <label>DOB</label><i class="fa-regular fa-calendar"></i>
     <input type="date" required=""><br><br>
     <label>Gender</label>
@@ -57,4 +57,11 @@
     </div>
     </div>
 </body>
+<script>
+    function fun(){
+        var a=document.myform.fname.value;
+        var b=document.myform.lname.value;
+        var =document.myform.fname.value;
+    }
+</script>
 </html>
