@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        #a {
+            width: 480px;
+            height: 750px;
+            background-color: black;
+            position: relative;
+            margin: 70px auto;
+            border-radius: 20px;
+            border: 2px solid pink;
+            padding: 40px 30px;
+            box-sizing: border-box;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 120px;
+            height: 120px;
+        }
+
+        input {
+            width: 100%;
+            background-color: aliceblue;
+            font-size: large;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid pink;
+            border-radius: 8px;
+        }
+
+        #Login {
+            width: 100%;
+            height: 50px;
+            border-radius: 25px;
+            background-color: palevioletred;
+            font-size: large;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        h4, h3 {
+            color: white;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        #h, #s {
+            color: palevioletred;
+            cursor: pointer;
+        }
+
+        #fill {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #dis {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #use, #pas {
+            color: white;
+            text-align: center;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+
+<div id="a">
+    <form action="" name="myform" onsubmit="return validateForm()">
+        <img src="download.png" alt="Logo">
+        <input type="email" placeholder="Enter your Email" name="mail" required>
+        <input type="password" placeholder="Enter your password" name="pass" required>
+        <input type="password" placeholder="Retype password" name="repass" required>
+        <button id="Login" type="submit">Login</button>
+
+        <h4>Forget your login details? <span id="h">Get Help</span></h4>
+        <h3>OR</h3>
+        <h4>Don't have an Account? <span id="s">Sign In</span></h4>
+        <div id="fill"></div>
+        <div id="dis"></div>
+        <h1 id="use"></h1>
+        <h1 id="pas"></h1>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var email = document.myform.mail.value;
+        var b = document.myform.pass.value;
+        var repass = document.myform.repass.value;
+        let message = "";
+
+        if (!email || !b || !repass) {
+            message = "Please fill all the fields.";
+        } else if (b !== repass) {
+            message = "Passwords do not match.";
+        } else if (b.length < 8 || 
+                   !b.match(/[A-Z]/) || 
+                   !b.match(/[a-z]/) || 
+                   !b.match(/[0-9!@#$%^&*]/)) {
+            message = "Password must be at least 8 characters long, include an uppercase letter and a number.";
+        }
+        if (message) {
+        document.getElementById("fill").innerHTML = message;
+    } else {
+        document.getElementById("fill").innerHTML = "";
+        document.getElementById("use").innerHTML = "Your mail: " + email;
+        document.getElementById("pas").innerHTML = "Your pass: " + b;
+        // alert("Inputs are valid!");
+        return false
+    }
+    }
+</script>
+
+</body>
+</html>

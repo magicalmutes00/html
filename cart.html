@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div>
+        <div class="crd_1">
+            <img src="src/img/shirt.jpeg" alt="shirt img">
+            <p>Product 1: <span id="a">0</span>items</p>
+            <button class="crt" onclick="addtocart()">+</button>
+            <button class="crt" onclick="removefromcart()">-</button>
+            <button class="btn" onclick="buy()">Buy Now</button>
+           
+        </div>
+        <!-- <div class="crd_2">
+            <img src="src/img/shirt2.jpeg" alt="shirt img">
+            <p>Product 1: <span id="a">0</span>items</p>
+            <button class="crt" onclick="addtocart()">+</button>
+            <button class="crt" onclick="removefromcart()">-</button>
+            <button class="btn">Buy Now</button>
+        </div> -->
+    </div>
+</body>
+<script>
+    let productcount=0
+    function addtocart(){
+        productcount++;
+        document.getElementById("a").innerText=productcount;
+    }
+    function removefromcart(){
+        if(productcount>0){
+            productcount--
+            document.getElementById("a").innerText=productcount;
+        }
+    }
+    function buy(){
+        alert("Product  Placed Succesfully")
+    }
+</script>
+</html>

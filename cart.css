@@ -1,0 +1,43 @@
+.crd_1{
+    width: 300px;
+    height: 500px;
+    background-color: bisque;
+    border-radius: 24px;
+}
+img{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+.crd_2{
+    width: 300px;
+    height: 500px;
+    background-color: bisque;
+    border-radius: 24px;
+    position: relative;
+    bottom: 500px;
+    left: 400px;
+}
+.btn{
+    position: relative;
+    top: 100px;
+    left: 30px;
+    width: 150px;
+    height: 30px;
+    border-radius: 18px;
+    border: none;
+}
+p{
+    position: relative;
+    top: 50px;
+    left: 100px;
+}
+.crt{
+    position: relative;
+    left: 130px;
+    top: 30px;
+    border-radius: 50%;
+    border: none;
+}
