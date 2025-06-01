@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="src/Script/jquery-3.7.1.js"></script>
+</head>
+<style>
+    .box{
+        width: 300px;
+        height: 300px;
+        position: relative;
+        left: 650px;
+        border: 2px black solid;
+    }
+    button{
+        position: relative;
+        left: 700px;
+    }
+</style>
+<body>
+    <div class="box"></div><br><br>
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+    <button id="blue">Blue</button>
+</body>
+<script>
+    $(document).ready(function(){
+        $('#red').click(function(){
+            $('.box').css("background-color","  red");
+        })
+        $('#green').click(function(){
+            $('.box').css('background-color','green');
+        })
+        $('#blue').click(function(){
+            $('.box').css('background-color','blue');
+        })
+    })
+</script>
+</html>

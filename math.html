@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="src/Script/jquery-3.7.1.js"></script>
+</head>
+<body>
+     <input id="a" type="number" placeholder="Enter the first number">
+    <input id="b" type="number" placeholder="enter the second number"><br><br>   
+    <button class="add">Add</button>
+    <button class="sub">Subtract</button>
+    <button class="div">Divide</button>
+    <p>Result: <span id="res">0</span></p>
+</body>
+<script>
+    $(document).ready(function(){
+    $('.add').click(function() {
+      var a = Number($('#a').val());
+      var b = Number($('#b').val());
+      $('#res').text(a + b);
+    }); 
+    $('.sub').click(function(){
+        var a = Number($('#a').val());
+        var b = Number($('#b').val());
+        $('#res').text(a - b);
+    })
+    $('.div').click(function(){
+        var a = Number($('#a').val());
+        var b = Number($('#b').val());
+        if(b===0){
+            $('#res').text('number cannot be zero')
+        }else{
+            $('#res').text(a / b);
+        }
+    })
+    })
+</script>
+</html>
