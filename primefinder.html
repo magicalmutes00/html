@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            margin: 0;
+            padding: 1rem; /* Add some padding for mobile */
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 1rem; /* More rounded corners */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+            padding: 2rem;
+            max-width: 90%; /* Responsive max width */
+            width: 500px; /* Fixed width for larger screens */
+            text-align: center;
+        }
+        input[type="number"] {
+            border: 1px solid #cbd5e1; /* Light gray border */
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            width: calc(100% - 2rem); /* Adjust width for padding */
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s ease-in-out;
+        }
+        input[type="number"]:focus {
+            border-color: #6366f1; /* Indigo focus border */
+        }
+        button {
+            background-color: #6366f1; /* Indigo button */
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3); /* Button shadow */
+        }
+        button:hover {
+            background-color: #4f46e5; /* Darker indigo on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        button:active {
+            transform: translateY(0); /* Press effect */
+        }
+        #results {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #e0e7ff; /* Lighter indigo background for results */
+            border-radius: 0.75rem;
+            min-height: 100px; /* Ensure some visible space */
+            text-align: left;
+            overflow-y: auto; /* Scroll for many results */
+            max-height: 300px; /* Limit height for scroll */
+            border: 1px solid #a5b4fc; /* Border for results area */
+            color: #312e81; /* Darker text for results */
+        }
+        #error-message {
+            color: #ef4444; /* Red for error messages */
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Prime Number Finder</h1>
+        <p class="text-gray-600 mb-6">Enter a positive integer to find all prime numbers up to that limit.</p>
+
+        <input type="number" id="limitInput" placeholder="Enter a number (e.g., 100)" min="1">
+        <button id="findPrimesBtn">Find Primes</button>
+
+        <div id="error-message" class="hidden"></div>
+        <div id="results" class="text-gray-700">
+            Results will appear here.
+        </div>
+    </div>
+
+    <script>
+        // Get references to HTML elements
+        const limitInput = document.getElementById('limitInput');
+        const findPrimesBtn = document.getElementById('findPrimesBtn');
+        const resultsDiv = document.getElementById('results');
+        const errorMessageDiv = document.getElementById('error-message');
+
+        /**
+         * Checks if a given number is prime.
+         * A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+         * @param {number} num The number to check.
+         * @returns {boolean} True if the number is prime, false otherwise.
+         */
+        function isPrime(num) {
+            // Prime numbers must be greater than 1
+            if (num <= 1) {
+                return false;
+            }
+            // 2 is the only even prime number
+            if (num <= 3) {
+                return true;
+            }
+            // If num is divisible by 2 or 3, it's not prime
+            if (num % 2 === 0 || num % 3 === 0) {
+                return false;
+            }
+            // Check for divisors from 5 onwards, incrementing by 6
+            // (all primes greater than 3 can be expressed in the form 6k ± 1)
+            for (let i = 5; i * i <= num; i = i + 6) {
+                if (num % i === 0 || num % (i + 2) === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /**
+         * Finds all prime numbers up to a specified limit.
+         * @param {number} limit The upper bound (inclusive) to search for prime numbers.
+         * @returns {number[]} An array containing all prime numbers found.
+         */
+        function findPrimes(limit) {
+            const primes = [];
+            // Iterate from 2 up to the limit, checking each number for primality
+            for (let i = 2; i <= limit; i++) {
+                if (isPrime(i)) {
+                    primes.push(i);
+                }
+            }
+            return primes;
+        }
+
+        /**
+         * Displays a message in the error message div.
+         * @param {string} message The error message to display.
+         */
+        function displayError(message) {
+            errorMessageDiv.textContent = message;
+            errorMessageDiv.classList.remove('hidden'); // Make error message visible
+        }
+
+        /**
+         * Clears any displayed error messages.
+         */
+        function clearError() {
+            errorMessageDiv.textContent = '';
+            errorMessageDiv.classList.add('hidden'); // Hide error message
+        }
+
+        /**
+         * Event listener for the "Find Primes" button click.
+         */
+        findPrimesBtn.addEventListener('click', () => {
+            clearError(); // Clear previous errors
+            const limit = parseInt(limitInput.value); // Get the input value as an integer
+
+            // Validate the input
+            if (isNaN(limit) || limit < 1) {
+                displayError('Please enter a valid positive integer.');
+                resultsDiv.textContent = 'Results will appear here.'; // Clear previous results
+                return;
+            }
+
+            // Find primes and display them
+            const primesFound = findPrimes(limit);
+            if (primesFound.length > 0) {
+                resultsDiv.textContent = 'Prime numbers up to ' + limit + ': ' + primesFound.join(', ');
+            } else if (limit === 1) {
+                resultsDiv.textContent = 'There are no prime numbers up to 1.';
+            } else {
+                resultsDiv.textContent = 'No prime numbers found up to ' + limit + '.';
+            }
+        });
+
+        // Optional: Allow pressing Enter key in the input field to trigger the search
+        limitInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                findPrimesBtn.click(); // Simulate a click on the button
+            }
+        });
+    </script>
+</body>
+</html>

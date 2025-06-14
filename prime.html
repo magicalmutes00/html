@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primenumber</title>
+    <script src="src/Script/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <input id="1" type="text" placeholder="Username"><br><br>
+    <input id="2" type="text" placeholder="Password">
+</body>
+<script>
+    $(document).ready(function(){
+        $("#1").focusin(function(){
+            $(this).css("background-color","#a2d2ff")
+        })
+        $("#1").focusout(function(){
+            $(this).css("background-color","#8d99ae")
+        })
+         $("#2").focusin(function(){
+            $(this).css("background-color","#a2d2ff")
+        })
+        $("#2").focusout(function(){
+            $(this).css("background-color","#8d99ae")
+        })
+    })
+</script>
+</html>
